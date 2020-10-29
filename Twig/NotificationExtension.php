@@ -9,7 +9,7 @@ use Mgilet\NotificationBundle\Manager\NotificationManager;
 use Mgilet\NotificationBundle\NotifiableInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-//use Twig_Extension;
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -27,10 +27,10 @@ class NotificationExtension extends AbstractExtension
      * NotificationExtension constructor.
      * @param NotificationManager $notificationManager
      * @param TokenStorage $storage
-     * @param \Twig_Environment $twig
+     * @param Environment $twig
      * @param RouterInterface $router
      */
-    public function __construct(NotificationManager $notificationManager, TokenStorageInterface $storage, \Twig_Environment $twig, RouterInterface $router)
+    public function __construct(NotificationManager $notificationManager, TokenStorageInterface $storage, Environment $twig, RouterInterface $router)
     {
         $this->notificationManager = $notificationManager;
         $this->storage = $storage;
